@@ -1,0 +1,9 @@
+{
+  "container_name": "Opensmile Shop Web",
+  "container_type": "Web",
+  "container_id": "G-R0BPT1TP36",
+  "admin_users": [
+    "owner@opensmile.shop.com",
+    "developer@opensmile.shop.com"
+  ]
+}
