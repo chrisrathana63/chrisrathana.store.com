@@ -1,0 +1,25 @@
+{
+  "account_name": "Opensmile Shop",
+  "country": "Cambodia",
+  "time_zone": "Asia/Phnom_Penh",
+  "data_sharing_settings": {
+    "google_products_and_services": true,
+    "benchmarking": false,
+    "technical_support": true,
+    "account_specialists": true
+  },
+  "users": [
+    {
+      "email": "owner@opensmile.shop.com",
+      "role": "ADMIN"
+    },
+    {
+      "email": "developer@opensmile.shop.com",
+      "role": "EDITOR"
+    },
+    {
+      "email": "marketing@opensmile.shop.com",
+      "role": "VIEWER"
+    }
+  ]
+}
