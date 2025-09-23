@@ -42,6 +42,6 @@ gcloud run services update cloudsmile.shop.com\
   --set-env-vars MY_API_TOKEN="YourSecretTokenHere"
   
   gcloud logs read --project=cloudsmile.shop.com
-  🌍 Website URL: https://cloudsmile.shop.com-web-xxxxx.a.run.app
+  🌍 Website URL:https://www.chrisrathana.store.com-web-xxxxx.a.run.app
 🔑 Your API Token: YourSecretTokenHere
-🔗 Token-protected Endpoint: https://cloudsmile.shop.com-xxxxx.a.run.app/api/token
+🔗 Token-protected Endpoint:https://www.chrisrathana.store.com-xxxxx.a.run.app/api/token
