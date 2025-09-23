@@ -4,11 +4,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/setup-node@v5.0.0
+      - uses: actions/setup-node@v5
 
       - name: Cache node modules
         id: cache-npm
-        uses: actions/cache@v4.0.0
+        uses: actions/cache@v4
         env:
           cache-name: cache-node-modules
         with:
