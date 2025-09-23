@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="Khmer">
+<head>
+<meta charset="UTF-8">
+<meta name="mobile-web-app-capable" content="yes"> 
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="viewport"id="" content="width"=device-widh, initial-scale="1"/>    
+ <title>chrisratha.store|Lonin</title>
+ <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet.css">
+<link rel="icon" type rel="icon" href="images/fd.christana.png">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+ <!-- font awesome cdn link -->
+ <!-- Open Graph URL -->
+<meta property="og:site_name" content="onlin.smliestore.com">
+<meta property="og:title" content="rathanachris239@gmail.com">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.smliestore.com">
+<!-- Your CSS -->
+<link rel="stylesheet" href="style.css">
+  <style>
+    /* Reset */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+    body {
+      background-color: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 500px;
+      width: 90%;
+      background-color: #fff;
+      padding: 25px 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .container img.circle-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      display: block;
+      margin: 0 auto 15px auto;
+      object-fit: cover;
+    }
+    .container h1 {
+      text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 25px;
+      color: #333;
+    }
+    form#reviewForm {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    form#reviewForm input,
+    form#reviewForm textarea {
+      padding: 12px 15px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      width: 100%;
+    }
+    form#reviewForm input:focus,
+    form#reviewForm textarea:focus {
+      border-color: #007BFF;
+      outline: none;
+    }
+    form#reviewForm button {
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      background-color: #007BFF;
+      color: white;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    form#reviewForm button:hover {
+      background-color: #0056b3;
+    }
+    #response {
+      margin-top: 15px;
+      text-align: center;
+      font-size: 0.95rem;
+      color: green;
+    }
+
+    /* Responsive: tablets */
+    @media (max-width: 768px) {
+      .container {
+        padding: 20px;
+      }
+      .container h1 {
+        font-size: 1.5rem;
+      }
+      .container img.circle-img {
+        width: 100px;
+        height: 100px;
+      }
+    }
+    /* Responsive: mobile */
+    @media (max-width: 480px) {
+      .container {
+        padding: 15px;
+      }
+      .container h1 {
+        font-size: 1.2rem;
+      }
+      form#reviewForm button {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div>
+    <center><img src="images/dompec.png" alt="logo" class="circle-img"></center>
+  </div>
+  <h1>welcome to dompecshop<?php echo $name; ?></h1>
+  <div>
+    <form id="reviewForm">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="password" name="password" placeholder="Your Password" required>
+      <textarea name="review" placeholder="Your Message / Review" rows="5" required></textarea>
+      <button type="submit">Login</button>
+    </form>
+    <div id="response"></div>
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const form = document.getElementById("reviewForm");
+  const responseDiv = document.getElementById("response");
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault(); // Stop form from submitting normally
+
+    // Get form values
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    const password = form.password.value;
+    const review = form.review.value.trim();
+
+    // Simple validation
+    if (!name || !email || !password || !review) {
+      responseDiv.textContent = "Please fill in all fields!";
+      responseDiv.style.color = "red";
+      return;
+    }
+
+    // Optional: simple email format check
+    const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    if (!email.match(emailPattern)) {
+      responseDiv.textContent = "Please enter a valid email!";
+      responseDiv.style.color = "red";
+      return;
+    }
+
+    // Simulate login success
+    responseDiv.textContent = `Hello ${name}, your login was successful!`;
+    responseDiv.style.color = "green";
+
+    // Clear form after submission
+    form.reset();
+  });
+
+  // Optional: simulate Google login
+  const googleBtn = document.createElement("button");
+  googleBtn.type = "button";
+  googleBtn.textContent = "Login with Google";
+  googleBtn.style.marginTop = "10px";
+  googleBtn.style.padding = "12px";
+  googleBtn.style.border = "none";
+  googleBtn.style.borderRadius = "8px";
+  googleBtn.style.backgroundColor = "#DB4437";
+  googleBtn.style.color = "white";
+  googleBtn.style.cursor = "pointer";
+  googleBtn.addEventListener("click", function() {
+    responseDiv.textContent = "Google login clicked (simulated)";
+    responseDiv.style.color = "blue";
+  }); form.parentNode.appendChild(googleBtn);
+});
+</script>
+
+</body>
+</html>
