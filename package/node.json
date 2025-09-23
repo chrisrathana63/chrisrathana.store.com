@@ -9,17 +9,8 @@
     "account_specialists": true
   },
   "users": [
-    {
-      "email": "owner@chrisrathana.store.com",
-      "role": "ADMIN"
-    },
-    {
-      "email": "developer@chrisrathana.store.com",
-      "role": "EDITOR"
-    },
-    {
-      "email": "marketing@chrisrathana.store.com",
-      "role": "VIEWER"
-    }
+    { "email": "owner@chrisrathana.store.com", "role": "ADMIN" },
+    { "email": "developer@chrisrathana.store.com", "role": "EDITOR" },
+    { "email": "marketing@chrisrathana.store.com", "role": "VIEWER" }
   ]
 }
