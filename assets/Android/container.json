@@ -1,6 +1,7 @@
 {
   "container_name": "chrisrathana.apk",
-  "container_type": "Web",
+  "container_type": "wed",
+  "container_type": "Android",
   "container_id": "G-R0BPT1TP36",
   "admin_users": [
     "owner@chrisrathana.store.com",
