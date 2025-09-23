@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang=Khmer">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-site-verification" content=""/>
+<meta property="android:app_id" content="1401488693436528">
+<meta name="apple.itunes.app" content="app.id=1477376905,"> 
+ <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,700' rel='stylesheet' type='text/css'>
+<title>christana.store|shopping-cart</title>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type rel="icon" href="images/christana.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+body {
+font-family: "Khmer OS Phnom Penh ", Arial, sans-serif;
+background: #f5f6fa;
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 100vh;
+}
+.invoice {
+background: #fff;
+padding: 25px;
+border-radius: 15px;
+box-shadow: 0 4px 10px rgba(0,0,0,0.1);width: 400px;
+}
+.invoice h2 {
+text-align: center;
+margin-bottom: 20px;
+color: #333;
+}
+.form-group {
+margin-bottom: 15px;
+}
+label {
+font-weight: bold;
+display: block;
+margin-bottom: 5px;
+}
+input, textarea { 
+width: 90%;/* កំណត់ទំហំឲ្យមានចន្លោះពីឆ្វេងស្តាំ */
+max-width: 400px;  /* កុំឲ្យធំពេក */
+padding: 10px;
+border: 1px solid #ccc;
+border-radius: 8px;
+outline: none;
+display: block; /* ឲ្យវាដាក់ជាជួរ */
+margin: 10px auto;/* ស្មើឆ្វេង-ស្តាំ និងមានចន្លោះខាងលើ-ក្រោម */
+}
+textarea {
+resize: none;
+height: 80px;
+}
+.btn {
+width: 100%;
+padding: 12px;
+background: #1877f2;
+color: #fff;
+font-size: 16px;
+border: none;
+border-radius: 8px;
+cursor: pointer;
+transition: 0.3s;
+}
+.btn:hover {
+background: #0d65d9;
+}
+.toast {
+position: fixed;
+left: 50%;
+bottom: 24px;
+transform: translateX(-50%) translateY(20px);
+background: #333;
+color: #fff;
+padding: 10px 14px;
+border-radius: 8px;
+opacity: 0;
+transition: .3s ease;
+box-shadow: 0 8px 16pxrgba(0,0,0,.15);
+z-index: 9999;
+font-size: 14px;
+}
+.toast.show {
+opacity: 1;transform: translateX(-50%) translateY(0);
+}
+</style>
+</head>
+<body>
+
+  <div class="invoice">
+    <h2><i class="fas fa-shopping-cart"></i> Shopping Cart Invoice</h2>
+
+    <form>
+      <div class="form-group">
+        <label for="name">ឈ្មោះពេញ</label>
+        <input type="text" id="name" placeholder="បញ្ចូលឈ្មោះរបស់អ្នក">
+      </div>
+
+      <div class="form-group">
+        <label for="email">Gmail:</label>
+        <input type="email" id="email" placeholder="example@gmail.com">
+      </div>
+
+      <div class="form-group">
+        <label for="phone">លេខទូរស័ព្ទ:</label>
+        <input type="text" id="phone" placeholder="0XX-XXX-XXX">
+      </div>
+
+      <div class="form-group">
+     <label for="phone">អាសយដ្ឋានផ្ទះ</label>
+      <input type="text" id="Home address" placeholder="0XX-XXX-XXX">
+      </div>
+
+      <div class="form-group">
+        <label for="address">ទីតាំងដឹកជញ្ជូន:</label>
+        <textarea id="address" placeholder="បញ្ចូលអាសយដ្ឋានដឹកជញ្ជូន"></textarea>
+      </div>
+
+      <button type="submit" class="btn"><i class="fas fa-check-circle"></i> បញ្ជាទិញ</button>
+    </form>
+  </div>
+<!-- end from -->
+<script>
+(function () {
+  const form = document.querySelector('.invoice form');
+// Toast helper
+  function showToast(msg) {
+    let el = document.createElement('div');
+    el.className = 'toast';
+    el.textContent = msg;
+    document.body.appendChild(el);
+    requestAnimationFrame(() => el.classList.add('show'));
+    setTimeout(() => {
+      el.classList.remove('show');
+      setTimeout(() => el.remove(), 300);
+    }, 3000);
+  }
+
+  // Browser Notification (optional)
+  async function notifyBrowser(title, body) {
+    try {
+      if (!('Notification' in window)) return;
+      if (Notification.permission === 'default') {
+        await Notification.requestPermission();
+      }
+      if (Notification.permission === 'granted') {
+        new Notification(title, { body });
+      }
+    } catch (_) {}
+  }
+
+  // OPTIONAL: Telegram webhook (បំពេញ TOKEN/CHAT_ID បើចង់ប្រើ)
+  async function notifyTelegram(text) {
+    const BOT_TOKEN = "";      // ← ដាក់ Bot Token
+    const CHAT_ID  = "";       // ← ដាក់ Chat ID
+    if (!BOT_TOKEN || !CHAT_ID) return; // មិនដាក់គេនឹងមិនផ្ញើ
+
+    const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
+    await fetch(url, {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({ chat_id: CHAT_ID, text })
+    }).catch(() => {});
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    // ចូលយកទិន្នន័យ
+    const name    = document.getElementById$('name')?.value.trim() || '';
+    const email   = document.getElementById$('email')?.value.trim() || '';
+    const phone   = document.getElementById$('phone')?.value.trim() || '';
+    const address = document.getElementById$('address')?.value.trim() || '';
+
+    // Validate សាមញ្ញ
+    if (!name || !email || !phone || !address) {
+      showToast('សូមបំពេញព័ត៌មានអោយគ្រប់!');
+      return;
+    }
+    // បង្កើតសារ
+    const msg = `🧾 ការបញ្ជាទិញថ្មី\n👤 ឈ្មោះ: ${name}\n📧 Email: ${email}\n📱 ទូរស័ព្ទ: ${phone}\n📦 ដឹកជញ្ជូន: ${address}`;
+    // Toast នៅទំព័រ
+    showToast('បានផ្ញើការជូនដំណឹង!');
+
+    // Browser notification (បើអនុញ្ញាត)
+    notifyBrowser('ការបញ្ជាទិញថ្មី', `${name} • ${phone}`);
+
+    // OPTIONAL: Telegram (បើបានបំពេញ TOKEN/CHAT_ID ខាងលើ)
+    await notifyTelegram(msg);
+
+    // អ្នកអាចបន្ថែម: ផ្ញើទៅ backend API របស់អ្នកនៅទីនេះ
+    // await fetch('/api/order', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({name,email,phone,address}) });
+
+    // Clear form (ស្រេចចិត្ត)
+    form.reset();
+  });
+})();
+</script>
+</body>
+</html>
