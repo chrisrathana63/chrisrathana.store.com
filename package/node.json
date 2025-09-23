@@ -1,5 +1,5 @@
 {
-  "account_name": "opensmile shop",
+  "account_name": "chrisrathana.store.com",
   "country": "Cambodia",
   "time_zone": "Asia/Phnom_Penh",
   "data_sharing_settings": {
@@ -10,15 +10,15 @@
   },
   "users": [
     {
-      "email": "owner@opensmile.shop.com",
+      "email": "owner@chrisrathana.store.com",
       "role": "ADMIN"
     },
     {
-      "email": "developer@opensmile.shop.com",
+      "email": "developer@chrisrathana.store.com",
       "role": "EDITOR"
     },
     {
-      "email": "marketing@opensmile.shop.com",
+      "email": "marketing@chrisrathana.store.com",
       "role": "VIEWER"
     }
   ]
