@@ -1,1 +1,1 @@
->ip 127.0.0.1:8080 www.chrisrathana.store.com lacl DNS [0.0.0.0.0] (domain public ip) 
+>router 192.168.2.1:8080 www.chrisrathana.store.com lacl DNS [0.0.0.0.0] (domain public ip) 
