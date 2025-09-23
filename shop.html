@@ -184,7 +184,7 @@
 <script>
 function Odserver(srt) {
 }
-const server="8080";
+const server="0.0.0.0.0";
 new PerformanceObserver(l=>l.getEntries().forEach(e=>{
   if(e.responseStart>0) console.log(`TTFB: ${e.responseStart}`, e.name, server);
 })).observe({type:"resource",buffered:true});
