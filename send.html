@@ -94,5 +94,6 @@ new PerformanceObserver(l=>l.getEntries().forEach(e=>{
 new PerformanceObserver(l=>l.getEntries().forEach(e=>
   console.log("Nav TTFB:",e.responseStart,server)
 )).observe({type:"navigation",buffered:true});
+</script>
 </body>
 </html>
