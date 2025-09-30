@@ -2,8 +2,8 @@
 # deploy_web_Token.sh
 # Script to deploy website with API Token to Google Cloud Run
 
-PROJECT_ID="cloudsmile.shop.com"
-SERVICE_NAME="cloudsmile.shop.com"
+PROJECT_ID="chrisrathana.smile.com"
+SERVICE_NAME="chrisrathana.smile.com"
 REGION="asia-southeast1"
 API_TOKEN_VALUE="YourSecretTokenHere"
 
@@ -37,11 +37,11 @@ SERVICE_URL=$(gcloud run services describe $SERVICE_NAME --region $REGION --form
 echo "✅ Deployment complete!"
 echo "🌍 Website: $SERVICE_URL"
 echo "🔑 Token Endpoint: $SERVICE_URL/api/token"
-gcloud run services update cloudsmile.shop.com\
+gcloud run services update chrisrathana.smile.com\
   --region asia-southeast1 \
   --set-env-vars MY_API_TOKEN="YourSecretTokenHere"
   
-  gcloud logs read --project=cloudsmile.shop.com
+  gcloud logs read --project=chrisrathana.smile.com
   🌍 Website URL:https://www.chrisrathana.store.com-web-xxxxx.a.run.app
 🔑 Your API Token: YourSecretTokenHere
 🔗 Token-protected Endpoint:https://www.chrisrathana.store.com-xxxxx.a.run.app/api/token
