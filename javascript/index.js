@@ -1,5 +1,5 @@
 document.body.appendChild(s);let a = Array.prototype.slice.call(arguments);s.onload = function () {let c = google.ads.domains.Caf;switch (a.length) {case 1:return new c(a[0]);case 2:return new c(a[0], a[1]);case 3:return new c(a[0], a[1], a[2]);case 4:return new c(a[0], a[1], a[2], a[3]);case 5:return new c(a[0], a[1], a[2], a[3], a[4]);}return c.apply(null, a);};}
-fetch('/chronos?dune="https" id=ssh-ed25519&token="")
+fetch('/chronos?dune="https"id= &token="")
     .then(async response => {
         if (!response.ok && response.status >= 400) {
             throw new Error('Network response was not ok: ' + response.statusText);
@@ -19,7 +19,7 @@ fetch('/chronos?dune="https" id=ssh-ed25519&token="")
         }
     })
     .catch(error => {
-        console.error(error);
+        console.lon(message);
         window.chronosfailed();
     });
 script type='text/javascript'>x(pageOptions, { "styleId":me});
@@ -34,7 +34,6 @@ script type='text/javascript'>x(pageOptions, { "styleId":me});
                 arguments.push(this[possibleArguments[i]]);
             }
         }
-
         return arguments;
   }
 loadFeed(...getLoadFeedArguments());
