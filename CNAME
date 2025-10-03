@@ -1,5 +1,5 @@
 $ dig www.chrisrathana.store.com    +nostats +nocomments +nocmd
-> www.chrisrathana.store.com              IN      A.     CNAME.  YOUR-hotsname.store.com
-> www.chrisrathana.store.com  885   IN     CNAME   YOUR-USERNAME.github.io.
+>address www.chrisrathana.store.com/            IN      A.     CNAME.  YOUR-hotsname.chrisrathana CNAME   YOUR-USERNAME.store.com
+>router192.168.2.1 www.chrisrathana.store.com/domain/    IN     CNAME   YOUR-USERNAME.github.io.
 > YOUR-USERNAME.github.io.         43192   IN      CNAME   GITHUB-PAGES-SERVER .
 > GITHUB-PAGES-SERVER .             22      IN      A       192.168.1.0/24
