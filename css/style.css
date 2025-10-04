@@ -134,7 +134,7 @@ nav a:hover {
 }
 @media (max-width: 450px){
    html {
-        font-size: 50%; /* Makes font size smaller for mobile */
+        font-size: 35%; /* Makes font size smaller for mobile */
     }
 
     nav a {
@@ -144,6 +144,101 @@ nav a:hover {
     .icons a {
         font-size: 18px;
   }
+}
+/* About Section */
+.about-section {
+  position: relative;
+  padding: 80px 20px;
+  text-align: center;
+  background: url("..image/phg") no-repeat center center/cover; /* ដាក់ background image */
+  color: #fff; /* default color for text */
+}
+/* Container alignment */
+.about-section .container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: rgba(0, 0, 0, 0.5); /* transparent box over bg image */
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Video */
+.about-section video {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Title */
+.about-section h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  font-family: "Khmer", chrirathana sans-serif;
+  font-weight: bold;
+  color: #FFD700; /* Gold highlight */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Paragraph */
+.about-section p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #f1f1f1; /* light gray text color */
+  margin: 20px 0;
+  text-align: justify;
+}
+
+/* Buttons */
+.about-section button,
+.about-section a.button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  background: #0a2621; /* Google red */
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+.about-section button:hover,
+.about-section a.button:hover {
+  background: #0a2621;
+  transform: translateY(-3px);
+}
+/* Animation Keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Effect base */
+.about-section .fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+
+/* When active (scroll to view) */
+.about-section .fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+  animation: fadeInUp 1s ease forwards;
+}
+form .btn {
+    margin-right: 10px;
 }
 nav {
     background: #2c3e50;
