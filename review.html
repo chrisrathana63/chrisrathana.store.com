@@ -1,26 +1,15 @@
-<?php
-// Check if form submitted
-if(isset($_POST['name'], $_POST['email'], $_POST['message'])) {
-    $name = htmlspecialchars($_POST['name']);
-    $email = htmlspecialchars($_POST['email']);
-    $message = htmlspecialchars($_POST['message']);
-} else {
-    header("Location: contact.php");
-    exit();
-}
-?>
-<!DOCTYPE html>
+
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml">
+ <meta charset="UTF-8">
 <html lang="km">
 <head>
-    <meta charset="UTF-8">
-    <title>dompecshop.com|review</title>
-     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>chrisrathana.srore|review.html</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="viewport" content="width"=device-widh, initial-scale="1"/>    
-     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet.css">
     <meta name="description" content="Welcome to dompec.online shop!">
-    <meta property="og:title" content="">
-    <meta property="og:type" content="website">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type rel="icon" href="images/fd.chrisrathana.png">
 </head>
@@ -69,6 +58,20 @@ if(isset($_POST['name'], $_POST['email'], $_POST['message'])) {
 
 </section>
 <!-- end home section -->
+
+<!-- form submitted php -->
+<?php
+// Check if form submitted
+if(isset($_POST['name'], $_POST['email'], $_POST['message'])) {
+    $name = htmlspecialchars($_POST['name']);
+    $email = htmlspecialchars($_POST['email']);
+    $message = htmlspecialchars($_POST['message']);
+} else {
+    header("Location: contact.php");
+    exit();
+}
+?>
+<!-- form submitted php -->
 <div class="preview-box">
     <p><strong>ឈ្មោះ៖</strong> <?php echo $name; ?></p>
     <p><strong>អ៊ីមែល Gmail៖</strong> <?php echo $email; ?></p>
