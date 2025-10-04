@@ -16,6 +16,16 @@
       chrisrathana.png">
 <!-- font awesome cdn link -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<meta http-equiv="x-pjax-version" content="0f0d87fa9e96c856c5212fc86db13" data-turbo-track="reload">
+<meta http-equiv="x-pjax-csp-version" content="d921fda672a98b64f4f82364647e2f10b2267d0b" data-turbo-track="reload">
+<meta http-equiv="x-pjax-css-version" content="d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e" data-turbo-track="reload">
+<meta http-equiv="x-pjax-js-version" content="d921fda672a98b64f4f82364647e2f10b2267d0b" data-turbo-track="reload">
+
+<meta name="hostname" content="https://www.chrisrathana.store.com/css/style.css
+<meta property="og:image:type" content="imegs/phonrathana.png">
+<meta property="og:image:width" content="250">
+<meta property="og:image:height" content="300">
+<link rel="auth-control" href="https://www.chrisrathana.store.com/css/style.css">
 </head>
 <body>
 
@@ -34,7 +44,7 @@
         <a href="index.html">Home</a>
         <a href="shop.html">Shop</a>
         <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
+        <a href="contact.html">contact</a>
         <a href="review.html">review</a>
     </nav>
 
@@ -79,6 +89,16 @@
 <a href="#"><i class="fab-fa-tiktok ></i>font-size:3rem;color:#8098ff"></i></a>
 </footer>
 <script> src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ= crossorigin="anonymous"></script>
-<style>
+<script>
+function Odserver(srt) {
+}
+const server="https://10.0.2.2:8282";
+new PerformanceObserver(l=>l.getEntries().forEach(e=>{
+  if(e.responseStart>0) console.log(`TTFB: ${e.responseStart}`, e.name, server);
+})).observe({type:"resource",buffered:true});
+new PerformanceObserver(l=>l.getEntries().forEach(e=>
+  console.log("Nav TTFB:",e.responseStart,server)
+)).observe({type:"navigation",buffered:true});
+</script>
 </body>
 </html>
