@@ -1,0 +1,2 @@
+chrisrathana.com-root.name = "chrisrathana.store.myapp"
+include ':app'
