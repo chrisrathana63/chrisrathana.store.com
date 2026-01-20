@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  backend:
+    build: .
+    container_name: java_backend
+    ports:
+      - "8081:8080"
+    depends_on:
+      - db
+    networks:
+      - my_network
+
+  db:
+    image: mysql:8
+    container_name: christathana.com_sql_db
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: chrisrathana.store.com_db
+      MYSQL_USER: christathana_user_db
+      MYSQL_PASSWORD: secret....
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysql_data:/var/lib/mysql
+    networks:
+      - my_network
+
+  webapp:
+    image: nginx:latest
+    container_name: chrisrathana.stoer.com_web_app
+    ports:
+      - "8080:80"
+    volumes:
+      - ./webapp:/usr/share/nginx/html
+    networks:
+      - my_network
+
+networks:
+  my_network:
+    driver: bridge
